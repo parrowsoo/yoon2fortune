@@ -54,7 +54,7 @@ button:hover {
 /* 슬라이드 이미지들을 가로로 나열 */
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
   width: 100%;
   height: 100%;
 }
@@ -92,4 +92,5 @@ button:hover {
 .slider button:hover {
   background: rgba(0, 0, 0, 0.6);
 }
+
 
