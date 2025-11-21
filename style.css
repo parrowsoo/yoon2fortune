@@ -4,7 +4,7 @@ body {
   background: #fff8e7;
   text-align: center;
   padding: 20px;
-  margin: 50;
+  margin: 0;
 }
 
 /* 메인 컨테이너 */
@@ -38,25 +38,25 @@ button:hover {
   margin-top: 15px;
   font-size: 20px;
   min-height: 30px;
-  margin-bottom: 35px; /* 👉 운세 문장 아래 여백 추가 */
+  margin-bottom: 35px; /* 운세와 이미지 사이 간격 */
 }
 
-/* 슬라이드 전체 컨테이너 */
+/* ▌ 슬라이드 전체 컨테이너 (반응형) */
 .slider {
   position: relative;
   width: 100%;
-  max-width: 718px;   /* song_duck 기준 */
-  height: 665px;      /* song_duck 기준 */
+  max-width: 718px;      /* PC에서는 song_duck 기준 */
+  aspect-ratio: 718 / 665; /* 비율 고정 → 모바일에서도 자동 변경 */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
-  background: #f0f0f0;  /* 여백 보일 때 부드럽게 */
+  background: #f0f0f0;
 }
 
 /* 슬라이드 이미지들을 가로로 나열 */
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
   width: 100%;
   height: 100%;
 }
@@ -65,7 +65,36 @@ button:hover {
 .slides img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 👉 다른 이미지 크기 달라도 여백 생기도록 */
+  object-fit: contain;
   flex-shrink: 0;
   background: #ffffff;
+}
+
+
+/* ▌ 모바일 최적화 */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 22px;
+  }
+
+  #result {
+    font-size: 18px;
+  }
+  
+  button {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+
+  /* 모바일에서는 좌우 여백을 더 줘서 안정감 */
+  body {
+    padding: 12px;
+  }
+
+  /* 슬라이드: 폭 100%, 높이는 자동 유지됨 */
+  .slider {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;  /* 모바일에서 좀 더 정사각에 가깝게 */
+  }
 }
