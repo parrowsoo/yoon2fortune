@@ -32,10 +32,9 @@ const slides = document.querySelector('.slides');
 const slideImages = document.querySelectorAll('.slides img');
 const totalSlides = slideImages.length;
 
-// song_duck 기준 고정 폭
-const slideWidth = 718;
-
 function showSlide() {
+  const slideWidth = document.querySelector('.slider').clientWidth;
+
   currentIndex++;
 
   if (currentIndex >= totalSlides) {
@@ -47,3 +46,9 @@ function showSlide() {
 
 // 1.5초마다 자동 전환
 setInterval(showSlide, 1500);
+
+// 화면 크기 바뀌면 위치 재조정
+window.addEventListener('resize', () => {
+  const slideWidth = document.querySelector('.slider').clientWidth;
+  slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+});
