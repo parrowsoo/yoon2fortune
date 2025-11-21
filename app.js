@@ -12,7 +12,8 @@ const fortunes = [
  "（绝对不是因为我想要）惊喜礼物推荐你买一包宝可梦卡牌。",
  "画一只黄色的小猫，然后发给 yoon 吧。",
  "睁开眼睛去上班的你，真的很了不起，值得表扬。",
- "不管你带着好消息还是坏消息回家，我都会抱抱你，今天也加油。"
+ "不管你带着好消息还是坏消息回家，我都会抱抱你，今天也加油。",
+ "사랑해"
 ];
 
 // -----------------------------
@@ -31,8 +32,8 @@ const slides = document.querySelector('.slides');
 const slideImages = document.querySelectorAll('.slides img');
 const totalSlides = slideImages.length;
 
-// 이미지 크기(px) — CSS와 반드시 동일해야 함
-const slideWidth = 800;
+// song_duck 기준 고정 폭
+const slideWidth = 718;
 
 function showSlide() {
   currentIndex++;
@@ -44,5 +45,5 @@ function showSlide() {
   slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
-// 1초마다 자동 전환
-setInterval(showSlide, 1000);
+// 1.5초마다 자동 전환
+setInterval(showSlide, 1500);
